@@ -40,6 +40,7 @@ module OpenApiSDK
     autoload :RetrieveAnalyticsResponse, 'open_api_sdk/models/operations/retrieveanalytics_response.rb'
     autoload :GetWorkspaceRequest, 'open_api_sdk/models/operations/getworkspace_request.rb'
     autoload :GetWorkspaceResponse, 'open_api_sdk/models/operations/getworkspace_response.rb'
+    autoload :UpdateWorkspaceRequestBody, 'open_api_sdk/models/operations/updateworkspace_requestbody.rb'
     autoload :UpdateWorkspaceRequest, 'open_api_sdk/models/operations/updateworkspace_request.rb'
     autoload :UpdateWorkspaceResponse, 'open_api_sdk/models/operations/updateworkspace_response.rb'
     autoload :GetTagsRequest, 'open_api_sdk/models/operations/gettags_request.rb'

@@ -11,7 +11,7 @@ module OpenApiSDK
     class UpdateTagRequest < ::OpenApiSDK::Utils::FieldAugmented
       extend T::Sig
 
-      # The ID of the tag
+      # The ID of the tag to update.
       field :id, ::String, { 'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': false } }
 
       field :request_body, T.nilable(::OpenApiSDK::Operations::UpdateTagRequestBody), { 'request': { 'media_type': 'application/json' } }

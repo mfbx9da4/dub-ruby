@@ -115,12 +115,21 @@ module OpenApiSDK
         @sdk_configuration.globals
       )
       headers = {}
+      req_content_type, data, form = Utils.serialize_request_body(request, :request_body, :json)
+      headers['content-type'] = req_content_type
       headers['Accept'] = 'application/json'
       headers['user-agent'] = @sdk_configuration.user_agent
 
       r = @sdk_configuration.client.patch(url) do |req|
         req.headers = headers
         Utils.configure_request_security(req, @sdk_configuration.security) if !@sdk_configuration.nil? && !@sdk_configuration.security.nil?
+        if form
+          req.body = Utils.encode_form(form)
+        elsif Utils.match_content_type(req_content_type, 'application/x-www-form-urlencoded')
+          req.body = URI.encode_www_form(data)
+        else
+          req.body = data
+        end
       end
 
       content_type = r.headers.fetch('Content-Type', 'application/octet-stream')

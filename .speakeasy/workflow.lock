@@ -1,9 +1,9 @@
-speakeasyVersion: 1.326.3
+speakeasyVersion: 1.330.0
 sources:
     dub:
         sourceNamespace: dub
-        sourceRevisionDigest: sha256:e0d230aead42934b68613fc0b9e9bbe4656fb4d4c03f3e4f8ceddf9f1f79494d
-        sourceBlobDigest: sha256:e18f7b97656f6ec1a409b4c3e9823b367eae8a7d8f06f915cde29959b5b39e48
+        sourceRevisionDigest: sha256:38ae0d08add38e7851989e556c22b092820ca3e1b7c19a99d1fd9f2cded8f520
+        sourceBlobDigest: sha256:83f8bad9764bba9122933cad754f7b32ce0cd3db602ab00b94d8ab572f19a945
         tags:
             - latest
             - main
@@ -11,8 +11,10 @@ targets:
     my-first-target:
         source: dub
         sourceNamespace: dub
-        sourceRevisionDigest: sha256:e0d230aead42934b68613fc0b9e9bbe4656fb4d4c03f3e4f8ceddf9f1f79494d
-        sourceBlobDigest: sha256:e18f7b97656f6ec1a409b4c3e9823b367eae8a7d8f06f915cde29959b5b39e48
+        sourceRevisionDigest: sha256:38ae0d08add38e7851989e556c22b092820ca3e1b7c19a99d1fd9f2cded8f520
+        sourceBlobDigest: sha256:83f8bad9764bba9122933cad754f7b32ce0cd3db602ab00b94d8ab572f19a945
+        codeSamplesNamespace: code-samples-ruby-my-first-target
+        codeSamplesRevisionDigest: sha256:85b27c1095d05bc25c52a4b2047a1cbd8ff5f310fd687eea447e011aae99e15d
         outLocation: /github/workspace/repo
 workflow:
     workflowVersion: 1.0.0
@@ -30,3 +32,7 @@ workflow:
             publish:
                 rubygems:
                     token: $rubygems_auth_token
+            codeSamples:
+                output: codeSamples.yaml
+                registry:
+                    location: registry.speakeasyapi.dev/dub/dub/code-samples-ruby-my-first-target

@@ -38,7 +38,7 @@ s.config_security(
 
 req = ::OpenApiSDK::Operations::CreateLinkRequest.new(
   request_body: ::OpenApiSDK::Operations::CreateLinkRequestBody.new(
-    url: "https://google/com",
+    url: "https://google.com",
     external_id: "123456",
     tag_ids: [
     "<value>",
@@ -70,7 +70,7 @@ s.config_security(
 
 req = ::OpenApiSDK::Operations::UpsertLinkRequest.new(
   request_body: ::OpenApiSDK::Operations::UpsertLinkRequestBody.new(
-    url: "https://google/com",
+    url: "https://google.com",
     external_id: "123456",
     tag_ids: [
     "<value>",
